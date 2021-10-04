@@ -3,47 +3,47 @@
 # earlier versions of Drupal are tracked in `community/PHP/`
 
 # Ignore configuration files that may contain sensitive information
-/sites/*/*settings*.php
-/sites/*/*services*.yml
+/www/sites/*/*settings*.php
+/www/sites/*/*services*.yml
 
 # Ignore paths that may contain user-generated content
-/sites/*/files
-/sites/*/public
-/sites/*/private
-/sites/*/files-public
-/sites/*/files-private
+/www/sites/*/files
+/www/sites/*/public
+/www/sites/*/private
+/www/sites/*/files-public
+/www/sites/*/files-private
 
 # Ignore paths that may contain temporary files
-/sites/*/translations
-/sites/*/tmp
-/sites/*/cache
+/www/sites/*/translations
+/www/sites/*/tmp
+/www/sites/*/cache
 
 # Ignore testing related files
-/sites/simpletest
+/www/sites/simpletest
 
 # Ignore drupal core (if not versioning drupal sources)
-/core
-/modules/README.txt
-/profiles/README.txt
-/sites/README.txt
-/sites/example.sites.php
-/sites/example.settings.local.php
-/sites/development.services.yml
-/themes/README.txt
+/www/core
+/www/modules/README.txt
+/www/profiles/README.txt
+/www/sites/README.txt
+/www/sites/example.sites.php
+/www/sites/example.settings.local.php
+/www/sites/development.services.yml
+/www/themes/README.txt
 /vendor
-/.csslintrc
+/www/.csslintrc
 /.editorconfig
-/.eslintignore
-/.eslintrc.json
+/www/.eslintignore
+/www/.eslintrc.json
 /.gitattributes
 /.htaccess
-/autoload.php
+/www/autoload.php
 /composer.json
 /composer.lock
 /example.gitignore
-/index.php
+/www/index.php
 /LICENSE.txt
 /README.txt
 /robots.txt
-/update.php
+/www/update.php
 /web.config
