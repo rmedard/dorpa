@@ -54,3 +54,13 @@ nano composer.json
 composer update
 #1633266058
 composer require drush/drush
+#1633348154
+git status
+#1633348172
+git add .
+#1633348179
+git pull origin main --allow-unrelated-histories
+#1633348186
+git reset --hard HEAD
+#1633348188
+git pull origin main --allow-unrelated-histories
