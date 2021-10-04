@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gitignore template for Drupal 8 projects
 #
 # earlier versions of Drupal are tracked in `community/PHP/`
@@ -50,3 +51,54 @@
 /robots.txt
 /www/update.php
 /web.config
+=======
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+
+# Ignore configuration files that may contain sensitive information
+/www/sites/*/*settings*.php
+/www/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+/www/sites/*/files
+/www/sites/*/public
+/www/sites/*/private
+/www/sites/*/files-public
+/www/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+/www/sites/*/translations
+/www/sites/*/tmp
+/www/sites/*/cache
+
+# Ignore testing related files
+/www/sites/simpletest
+
+# Ignore drupal core (if not versioning drupal sources)
+/www/core
+/www/modules/README.txt
+/www/profiles/README.txt
+/www/sites/README.txt
+/www/sites/example.sites.php
+/www/sites/example.settings.local.php
+/www/sites/development.services.yml
+/www/themes/README.txt
+/vendor
+/www/.csslintrc
+/.editorconfig
+/www/.eslintignore
+/www/.eslintrc.json
+/.gitattributes
+/.htaccess
+/www/autoload.php
+/composer.json
+/composer.lock
+/example.gitignore
+/www/index.php
+/LICENSE.txt
+/README.txt
+/robots.txt
+/www/update.php
+/web.config
+>>>>>>> fde9bfb679d6dfe370b205cffbe62d082d7e94d7
