@@ -1,0 +1,13 @@
+<div class="p-4 p-md-5 my-4 text-white rounded bg-dark">
+  <div class="row">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">{{ article.title.value }}</h1>
+      <p class="lead my-3">{{ article.field_article_body.value|trim|truncate(200) }}</p>
+      <p class="lead mb-0"><a href="{{ path('entity.node.canonical', {'node': article.id}) }}" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      {% set image_uri = article.field_image|file_uri %}
+      <img src="{{ image_uri|image_style('large') }}" alt="{{ article.title.value }}" class="h-100">
+    </div>
+  </div>
+</div>

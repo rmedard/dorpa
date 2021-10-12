@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
+    h-md-250 position-relative align-items-center">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">Droits de l'homme</strong>
+        <h4 class="mb-0">{{ human_rights.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ human_rights.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ human_rights.field_article_body.value|trim|truncate(100) }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': human_rights.id}) }}" class="stretched-link">Lire la suite</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        {% set human_rights_image_uri = human_rights.field_image|file_uri %}
+        <img src="{{ human_rights_image_uri|image_style('article_thumbnail') }}" alt="{{ human_rights.title.value }}">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
+    h-md-250 position-relative align-items-center">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-danger">Opposants</strong>
+        <h4 class="mb-0">{{ opponent.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ opponent.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ opponent.field_article_body.value|trim|truncate(100) }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': opponent.id}) }}" class="stretched-link">Lire la suite</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        {% set opponent_image_uri = opponent.field_image|file_uri %}
+        <img src="{{ opponent_image_uri|image_style('article_thumbnail') }}" alt="{{ opponent.title.value }}">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
+    h-md-250 position-relative align-items-center">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-secondary">Réfugiés politiques</strong>
+        <h4 class="mb-0">{{ human_rights.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ human_rights.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ human_rights.field_article_body.value|trim|truncate(100) }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': human_rights.id}) }}" class="stretched-link">Lire la suite</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        {% set human_rights_image_uri = human_rights.field_image|file_uri %}
+        <img src="{{ human_rights_image_uri|image_style('article_thumbnail') }}" alt="{{ human_rights.title.value }}">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
+    h-md-250 position-relative align-items-center">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-info">Activistes</strong>
+        <h4 class="mb-0">{{ opponent.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ opponent.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ opponent.field_article_body.value|trim|truncate(100) }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': opponent.id}) }}" class="stretched-link">Lire la suite</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        {% set opponent_image_uri = opponent.field_image|file_uri %}
+        <img src="{{ opponent_image_uri|image_style('article_thumbnail') }}" alt="{{ opponent.title.value }}">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="p-4 mb-3 bg-light rounded">
+  <h4 class="fst-italic">About</h4>
+  <p class="mb-0">Ut at tellus purus. Maecenas sodales euismod ligula quis sodales. Etiam efficitur gravida semper. Morbi non ligula eros. Duis quis pellentesque urna. Proin congue ligula sit amet varius elementum. Proin condimentum diam imperdiet, tristique mi efficitur, mollis urna.</p>
+</div>

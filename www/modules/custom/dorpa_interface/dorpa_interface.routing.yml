@@ -1,0 +1,7 @@
+blessings_events.home_page:
+  path: '/homepage'
+  defaults:
+    _title: 'Dorpa ASBL Homepage'
+    _controller: Drupal\dorpa_interface\Controller\PagesController::homepage
+  requirements:
+    _permission: 'access content'

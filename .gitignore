@@ -49,3 +49,7 @@
 /robots.txt
 /www/update.php
 /web.config
+
+/.idea
+/www/modules/contrib/
+/www/themes/contrib/

@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * A description of what your module does.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function dorpa_interface_theme($existing, $type, $theme, $path): array
+{
+  return [
+    'dorpa_jumbo' => [
+      'variables' => [
+        'article' => []
+      ]
+    ],
+    'homepage' => [
+      'variables' => [
+        'opponent' => [],
+        'human_rights' => [],
+      ]
+    ]
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function dorpa_interface_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode)
+{
+  if ($entity instanceof NodeInterface and $entity->bundle() == 'victime' and $view_mode == 'teaser') {
+    $build['#attached']['drupalSettings']['victims'][$entity->id()] = $entity->get('field_victim_since')->date->format('Y/m/d');
+  }
+}

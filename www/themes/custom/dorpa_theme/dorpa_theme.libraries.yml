@@ -1,0 +1,15 @@
+global-styling:
+  version: VERSION
+  js:
+    js/popper.min.js: { minified: true }
+    js/bootstrap.min.js: { minified: true }
+    node_modules/moment/min/moment.min.js: { minified: true }
+    node_modules/moment-timezone/builds/moment-timezone.min.js: { minified: true }
+    js/barrio.js: { }
+    js/custom.js: { }
+  css:
+    component:
+      css/style.css: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
