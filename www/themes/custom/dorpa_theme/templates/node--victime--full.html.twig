@@ -73,24 +73,23 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  {% set gender = attribute(content.field_victim_gender.0, '#markup') %}
-  {% set isFemale = gender is same as('Femme') ? true : false %}
-  <div{{ content_attributes.addClass('node__content', 'clearfix', 'card', 'border-danger', 'border-2', 'bg-danger') }}>
-    {% set photo_uri = attribute(content.field_victim_photo.0, '#markup') %}
-    <div class="bg-white">
-      <img src="{{ photo_uri }}" class="img-fluid rounded-circle p-2" alt="{{ content.field_victim_name|field_value }}">
-    </div>
-    <div class="card-body py-2 bg-white">
-      <h5 class="card-title mb-0">
-        <a href="{{ url }}" class="stretched-link text-primary">
-          {{ content.field_victim_name|field_value }}, {{ content.field_victim_postname|field_value }}
-        </a>
-      </h5>
-      <p class="card-text"><small class="text-muted">Né en {{ content.field_victim_birth_year|field_value }}</small></p>
-    </div>
-    <div class="card-footer text-center bg-danger text-white border-0">
-      <small>{{ content.field_victim_fate|field_value }}{% if isFemale %}e{% endif %} depuis</small>
-      <div id="days-counter-{{ node.id }}"></div>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'pb-4') }}>
+    <div class="row">
+      <div class="col-md-4">
+        {% set photo_uri = attribute(content.field_victim_photo.0, '#markup') %}
+        <img src="{{ photo_uri }}" class="img-fluid rounded" alt="{{ content.field_victim_name|field_value }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card border-0 bg-light p-4 mb-3">
+          <h4 class="fst-italic">{{ content.field_victim_name|field_value }}, {{ content.field_victim_postname|field_value }} - <small class="text-muted">Né en {{ content.field_victim_birth_year|field_value }}</small></h4>
+          <div class="card-footer border-0 mt-2">
+            {% set gender = attribute(content.field_victim_gender.0, '#markup') %}
+            {% set isFemale = gender is same as('Femme') ? true : false %}
+            {{ content.field_victim_fate|field_value }}{% if isFemale %}e{% endif %} depuis <span id="days-counter-{{ node.id }}"></span>
+          </div>
+        </div>
+        {{ content.field_victim_details|field_value }}
+      </div>
     </div>
   </div>
 </article>

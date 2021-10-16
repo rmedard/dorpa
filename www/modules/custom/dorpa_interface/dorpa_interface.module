@@ -19,6 +19,9 @@ function dorpa_interface_theme($existing, $type, $theme, $path): array
         'article' => []
       ]
     ],
+    'social_buttons' => [
+      'variables' => []
+    ],
     'homepage' => [
       'variables' => [
         'opponent' => [],
@@ -33,7 +36,7 @@ function dorpa_interface_theme($existing, $type, $theme, $path): array
  */
 function dorpa_interface_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode)
 {
-  if ($entity instanceof NodeInterface and $entity->bundle() == 'victime' and $view_mode == 'teaser') {
-    $build['#attached']['drupalSettings']['victims'][$entity->id()] = $entity->get('field_victim_since')->date->format('Y/m/d');
+  if ($entity instanceof NodeInterface and $entity->bundle() == 'victime') {
+    $build['#attached']['drupalSettings']['victims'][$entity->id()] = [$view_mode, $entity->get('field_victim_since')->date->format('Y/m/d')];
   }
 }
