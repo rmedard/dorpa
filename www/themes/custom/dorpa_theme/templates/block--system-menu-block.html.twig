@@ -32,7 +32,7 @@
  */
 #}
 {% macro menuMacro(items) %}
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <ul class="navbar-nav mb-2 mb-lg-0">
     {% for menu_item in items %}
       {% set active = (menu_item.active) ? ' is-active' : '' %}
       {% set active = active ~ ((menu_item.active_trail) ? ' is-active-trail' : '') %}
@@ -57,10 +57,4 @@
 {% endmacro %}
 
 {% set items = simplify_menu('main').menu_tree %}
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      {{ _self.menuMacro(items) }}
-    </div>
-  </div>
-</nav>
+{{ _self.menuMacro(items) }}
