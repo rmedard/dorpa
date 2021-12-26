@@ -37,38 +37,38 @@
   {% endif %}
 </div>
 <div class="row">
-  {% if human_rights is not empty %}
+  {% if refugee is not empty %}
   <div class="col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
     h-md-250 position-relative align-items-center">
       <div class="col p-4 d-flex flex-column position-static">
         <strong class="d-inline-block mb-2 text-secondary">Réfugiés politiques</strong>
-        <h4 class="mb-0">{{ human_rights.title.value }}</h4>
-        <div class="mb-1 text-muted">{{ human_rights.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', human_rights.id, 'teaser') }}</p>
-        <a href="{{ path('entity.node.canonical', {'node': human_rights.id}) }}" class="stretched-link">Lire la suite</a>
+        <h4 class="mb-0">{{ refugee.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ refugee.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', refugee.id, 'teaser') }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': refugee.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        {% set human_rights_image_uri = human_rights.field_image|file_uri %}
-        <img src="{{ human_rights_image_uri|image_style('article_thumbnail') }}" alt="{{ human_rights.title.value }}">
+        {% set refugee_image_uri = refugee.field_image|file_uri %}
+        <img src="{{ refugee_image_uri|image_style('article_thumbnail') }}" alt="{{ refugee.title.value }}">
       </div>
     </div>
   </div>
   {% endif %}
-  {% if opponent is not empty %}
+  {% if activist is not empty %}
   <div class="col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm
     h-md-250 position-relative align-items-center">
       <div class="col p-4 d-flex flex-column position-static">
         <strong class="d-inline-block mb-2 text-info">Activistes</strong>
-        <h4 class="mb-0">{{ opponent.title.value }}</h4>
-        <div class="mb-1 text-muted">{{ opponent.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', opponent.id, 'teaser') }}</p>
-        <a href="{{ path('entity.node.canonical', {'node': opponent.id}) }}" class="stretched-link">Lire la suite</a>
+        <h4 class="mb-0">{{ activist.title.value }}</h4>
+        <div class="mb-1 text-muted">{{ activist.created.value|date("d/m/Y H:i") }}</div>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', activist.id, 'teaser') }}</p>
+        <a href="{{ path('entity.node.canonical', {'node': activist.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        {% set opponent_image_uri = opponent.field_image|file_uri %}
-        <img src="{{ opponent_image_uri|image_style('article_thumbnail') }}" alt="{{ opponent.title.value }}">
+        {% set activist_image_uri = activist.field_image|file_uri %}
+        <img src="{{ activist_image_uri|image_style('article_thumbnail') }}" alt="{{ activist.title.value }}">
       </div>
     </div>
   </div>

@@ -32,7 +32,7 @@ class JumboBlock extends BlockBase
     $latest_article_query = $storage->getQuery()
       ->range(0, 1)
       ->condition('type', 'article')
-      ->sort('created')
+      ->sort('created', 'DESC')
       ->execute();
     $article_id = reset($latest_article_query);
     if ($article_id !== false) {

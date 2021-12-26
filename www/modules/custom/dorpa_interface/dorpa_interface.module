@@ -7,10 +7,12 @@
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
+use JetBrains\PhpStorm\ArrayShape;
 
 /**
  * Implements hook_theme().
  */
+#[ArrayShape(['dorpa_jumbo' => "\array[][]", 'social_buttons' => "array[]", 'homepage' => "\array[][]"])]
 function dorpa_interface_theme($existing, $type, $theme, $path): array
 {
   return [
@@ -25,6 +27,8 @@ function dorpa_interface_theme($existing, $type, $theme, $path): array
     'homepage' => [
       'variables' => [
         'opponent' => [],
+        'refugee' => [],
+        'activist' => [],
         'human_rights' => [],
       ]
     ]
