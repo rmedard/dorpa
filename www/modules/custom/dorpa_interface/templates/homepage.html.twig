@@ -7,7 +7,7 @@
         <strong class="d-inline-block mb-2 text-primary">Droits de l'homme</strong>
         <h4 class="mb-0">{{ human_rights.title.value }}</h4>
         <div class="mb-1 text-muted">{{ human_rights.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ human_rights.field_article_body.value|trim|truncate(100) }}</p>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', human_rights.id, 'teaser') }}</p>
         <a href="{{ path('entity.node.canonical', {'node': human_rights.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">
@@ -25,7 +25,7 @@
         <strong class="d-inline-block mb-2 text-danger">Opposants</strong>
         <h4 class="mb-0">{{ opponent.title.value }}</h4>
         <div class="mb-1 text-muted">{{ opponent.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ opponent.field_article_body.value|trim|truncate(100) }}</p>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', opponent.id, 'teaser') }}</p>
         <a href="{{ path('entity.node.canonical', {'node': opponent.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">
@@ -45,7 +45,7 @@
         <strong class="d-inline-block mb-2 text-secondary">Réfugiés politiques</strong>
         <h4 class="mb-0">{{ human_rights.title.value }}</h4>
         <div class="mb-1 text-muted">{{ human_rights.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ human_rights.field_article_body.value|trim|truncate(100) }}</p>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', human_rights.id, 'teaser') }}</p>
         <a href="{{ path('entity.node.canonical', {'node': human_rights.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">
@@ -63,7 +63,7 @@
         <strong class="d-inline-block mb-2 text-info">Activistes</strong>
         <h4 class="mb-0">{{ opponent.title.value }}</h4>
         <div class="mb-1 text-muted">{{ opponent.created.value|date("d/m/Y H:i") }}</div>
-        <p class="card-text mb-auto">{{ opponent.field_article_body.value|trim|truncate(100) }}</p>
+        <p class="card-text mb-auto">{{ drupal_field('field_article_body', 'node', opponent.id, 'teaser') }}</p>
         <a href="{{ path('entity.node.canonical', {'node': opponent.id}) }}" class="stretched-link">Lire la suite</a>
       </div>
       <div class="col-auto d-none d-lg-block">

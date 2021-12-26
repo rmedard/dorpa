@@ -29,10 +29,18 @@ class PagesController extends ControllerBase
       ->execute();
     $opponent_id = reset($opponent_query); // Returns false if empty
     $human_rights_id = reset($human_rights_query); // Returns false if empty
+    $opponent = [];
+    $humanRights = [];
+    if ($opponent_id !== false) {
+      $opponent = Node::load($opponent_id);
+    }
+    if ($human_rights_id !== false) {
+      $humanRights = Node::load($human_rights_id);
+    }
     $output[] = [
       '#theme' => 'homepage',
-      '#opponent' => $opponent_id !== false ? Node::load($opponent_id) : [],
-      '#human_rights' => $human_rights_id !== false ? Node::load($human_rights_id) : [],
+      '#opponent' => $opponent,
+      '#human_rights' => $humanRights,
     ];
 
     return $output;
