@@ -5,6 +5,7 @@ namespace Drupal\dorpa_interface\Controller;
 use Drupal;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 
 class PagesController extends ControllerBase
 {
@@ -17,24 +18,28 @@ class PagesController extends ControllerBase
     $opponent_query = $storage->getQuery()
       ->range(0, 1)
       ->condition('type', 'article')
+      ->condition('status', NodeInterface::PUBLISHED)
       ->condition('field_tags.target_id', 1)
       ->sort('created', 'DESC')
       ->execute();
     $refugees_query = $storage->getQuery()
       ->range(0, 1)
       ->condition('type', 'article')
+      ->condition('status', NodeInterface::PUBLISHED)
       ->condition('field_tags.target_id', 2)
       ->sort('created', 'DESC')
       ->execute();
     $activists_query = $storage->getQuery()
       ->range(0, 1)
       ->condition('type', 'article')
+      ->condition('status', NodeInterface::PUBLISHED)
       ->condition('field_tags.target_id', 3)
       ->sort('created', 'DESC')
       ->execute();
     $human_rights_query = $storage->getQuery()
       ->range(0, 1)
       ->condition('type', 'article')
+      ->condition('status', NodeInterface::PUBLISHED)
       ->condition('field_tags.target_id', 4)
       ->sort('created', 'DESC')
       ->execute();
